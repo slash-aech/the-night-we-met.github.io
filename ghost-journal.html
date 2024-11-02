@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghost Journal</title>
+    <link rel="stylesheet" href="ghost-journal-style.css">
+    <audio id="horror-music-2" src="Elements/horror-music-2.mp3" loop autoplay></audio>
+
+    <script>
+        const music = document.getElementById("horror-music-2");
+    
+        // Restore music playback time from localStorage
+        window.onload = function () {
+            const savedTime = localStorage.getItem("musicTime");
+            if (savedTime) {
+                music.currentTime = savedTime;
+            }
+            music.play();
+        };
+    </script>
+    <script src="ghost-journal-script.js"></script>
+</head>
+<body>
+    
+    <h2 class="title2">Ghost Journal</h2>
+
+    <div class="ghost-grid">
+        <!-- Create 24 ghost boxes in the grid -->
+        <div class="ghost-item" data-ghost="1">Specter</div>
+        <div class="ghost-item" data-ghost="2">Wraith</div>
+        <div class="ghost-item" data-ghost="3">Phantom</div>
+        <div class="ghost-item" data-ghost="4">Poltergeist</div>
+        <div class="ghost-item" data-ghost="5">Eidolon</div>
+        <div class="ghost-item" data-ghost="6">Entity</div>
+        <div class="ghost-item" data-ghost="7">Shade</div>
+        <div class="ghost-item" data-ghost="8">Vagari</div>
+        <div class="ghost-item" data-ghost="9">Yurei</div>
+        <div class="ghost-item" data-ghost="10">Djinn</div>
+        <div class="ghost-item" data-ghost="11">Myling</div>
+        <div class="ghost-item" data-ghost="12">Banshee</div>
+        <div class="ghost-item" data-ghost="13">Sylpharion</div>
+        <div class="ghost-item" data-ghost="14">Phooka</div>
+        <div class="ghost-item" data-ghost="15">Azkara</div>
+        <div class="ghost-item" data-ghost="16">Mare</div>
+        <div class="ghost-item" data-ghost="17">Draugr</div>
+        <div class="ghost-item" data-ghost="18">Melaina</div>
+        <div class="ghost-item" data-ghost="19">Tabo Baba</div>
+        <div class="ghost-item" data-ghost="20">Shapeshifter</div>
+        <div class="ghost-item" data-ghost="21">Skin Walker</div>
+        <div class="ghost-item" data-ghost="22">Remnara</div>
+        <div class="ghost-item" data-ghost="23">Umbra</div>
+        <div class="ghost-item" data-ghost="24">Nocturna</div>
+    </div>
+
+    <!-- Dialog box for displaying ghost image and information -->
+    <div id="ghost-modal" class="ghost-modal">
+        <div class="modal-content">
+            <img id="close-modal" class="close-icon" src="Elements/close-icon.png" alt="Close Icon"> <!-- Close icon image -->
+            <img class="arrow" id="left-arrow" src="Elements/left-arrow.png" alt="Left Arrow"> <!-- Left arrow image -->
+            <img id="ghost-image" src="" alt="Ghost Image">
+            <img class="arrow" id="right-arrow" src="Elements/right-arrow.png" alt="Right Arrow"> <!-- Right arrow image -->
+        </div>
+    </div>
+    </div>
+</body>
+</html>

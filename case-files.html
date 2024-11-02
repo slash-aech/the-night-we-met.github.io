@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Files</title>
+    
+    <audio id="horror-music-2" src="Elements/horror-music-2.mp3" loop autoplay></audio>
+
+    <script>
+        const music = document.getElementById("horror-music-2");
+    
+        // Restore music playback time from localStorage
+        window.onload = function () {
+            const savedTime = localStorage.getItem("musicTime");
+            if (savedTime) {
+                music.currentTime = savedTime;
+            }
+            music.play();
+        };
+    </script>
+    <link rel="stylesheet" href="case-files.css">
+    <script src="case-files.js"></script>
+</head>
+<body>
+    <h2 class="title3">Case Files</h2>
+
+    <!-- Case Files Links -->
+    <div style="text-align: center;">
+        <button class="horror-button" onclick="promptRedirect(1)">Case File 1</button>
+        <button class="horror-button" onclick="promptRedirect(2)">Case File 2</button>
+        <button class="horror-button" onclick="promptRedirect(3)">Case File 3</button>
+        <button class="horror-button" onclick="promptRedirect(4)">Case File 4</button>
+        <button class="horror-button" onclick="promptRedirect(5)">Case File 5</button>
+        <button class="horror-button" id = "case-file-6" onclick="promptRedirect(6)">Case File 6</button>
+    </div>
+
+    <!-- Dialog Box for Confirmation -->
+    <div id="dialog-box" class="dialog-box">
+        <div class="dialog-box-content">
+            <h2>An Entity is Taking You Somewhere Haunted</h2>
+            <p class="random-text">Are you sure you want to proceed?</p>
+            <div class="dialog-buttons">
+                <button class="confirmation-button" onclick="redirectToLink()">Yes, let's do it.</button>
+                <button class="confirmation-button" onclick="closeDialog()">No, I'm scared.</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

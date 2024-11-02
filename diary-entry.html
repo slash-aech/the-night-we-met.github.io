@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diary Entry</title>
+    <audio id="horror-music-2" src="Elements/horror-music-3.mp3" loop autoplay></audio>
+
+    <link rel="stylesheet" href="diary-entry-style.css">
+    <script>
+        const music = document.getElementById("horror-music-3");
+    
+        // Restore music playback time from localStorage
+        window.onload = function () {
+            const savedTime = localStorage.getItem("musicTime");
+            if (savedTime) {
+                music.currentTime = savedTime;
+            }
+            music.play();
+        };
+    </script>
+    <script src="diary-entry-script.js"></script>
+</head>
+<body>
+    
+    <h2>Diary Entry</h2>
+    <div class="container">
+        <!-- 6 diary entries -->
+        <button class="diary-entry" onclick="promptRedirect(1)">Diary Entry 1</button>
+        <button class="diary-entry" onclick="promptRedirect(2)">Diary Entry 2</button>
+        <button class="diary-entry" onclick="promptRedirect(3)">Diary Entry 3</button>
+        <button class="diary-entry" onclick="promptRedirect(4)">Diary Entry 4</button>
+        <button class="diary-entry" onclick="promptRedirect(5)">Diary Entry 5</button>
+        <button class="diary-entry" onclick="promptRedirect(6)">Diary Entry 6</button>
+    </div>
+
+    <!-- Dialog Box for Confirmation -->
+    <div id="dialog-box" class="dialog-box">
+        <div class="dialog-box-content">
+            <h2>Darling, is that you?</h2>
+            <div class="dialog-buttons">
+                <button class="confirmation-button" onclick="redirectToLink()">Yes, Honey</button>
+                <button class="confirmation-button" onclick="redirectToLink()">Yes, It's me</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+

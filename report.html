@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report to the Headquarters</title>
+    <link rel="stylesheet" href="styles2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+</head>
+<body class="background" id="body">
+
+    <div class="code-canvas">
+        <!-- Terminal Header -->
+        <div class="terminal-header">
+            <div class="circle red"></div>
+            <div class="circle yellow"></div>
+            <div class="circle green"></div>
+        </div>
+
+        <!-- Simulated Terminal -->
+        <div class="terminal">
+            <div class="terminal-content">
+                <p class="game-text">S</p>
+                <p class="game-text">E</p>
+                <p class="game-text">R</p>
+                <p class="game-text">G</p>
+                <p class="game-text">E</p>
+                <p class="game-text">A</p>
+                <p class="game-text">N</p>
+                <p class="game-text">T</p>
+            </div>
+            <div class="video-container">
+                <video controls width="400">
+                    <source src="your-video-file.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+        <div class="additional-text">
+            <p>This is your path, Sergeant. Embrace the mission ahead.</p>
+            <p>Code. Execute. Win.</p>
+        </div>
+
+        <!-- ID Card Section -->
+        <div class="id-card">
+            <h2>ID CARD</h2>
+            <p>Name: Sergeant X</p>
+            <p>Rank: Elite</p>
+            <p>Mission: Classified</p>
+            <img src="id-card-image.jpg" alt="Sergeant ID Card">
+        </div>
+    </div>
+
+
+    <div id="report-container" class="centered-content">
+        <button class="report-option" id="ghost-journal">Ghost Journal</button>
+        <button class="report-option" id="diary-entry">Diary Entry</button>
+        <button class="report-option" id="case-files">Case Files</button>
+    </div>
+    
+    
+    <audio id="horror-music-2" src="Elements/horror-music-2.mp3" loop autoplay></audio>
+     
+
+    <script>
+        const music = document.getElementById("horror-music-2");
+    
+        // Save music playback time before leaving the page
+        window.onbeforeunload = function () {
+            localStorage.setItem("musicTime", music.currentTime);
+        };
+    
+        // Restore music time from localStorage when page loads
+        window.onload = function () {
+            const savedTime = localStorage.getItem("musicTime");
+            if (savedTime) {
+                music.currentTime = savedTime;
+            }
+            music.play();
+        };
+    
+        document.getElementById('ghost-journal').addEventListener('click', () => {
+            window.location.href = "ghost-journal.html";
+        });
+    
+        document.getElementById('diary-entry').addEventListener('click', () => {
+            window.location.href = "diary-entry.html";
+        });
+    
+        document.getElementById('case-files').addEventListener('click', () => {
+            window.location.href = "case-files.html";
+        });
+    </script>
+
+
+
+    <script src="script2.js"></script> 
+</body>
+</html>
