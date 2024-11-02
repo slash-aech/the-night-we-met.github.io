@@ -4,7 +4,7 @@ const caseFileLinks = {
     3: "https://drive.google.com/file/d/1EUvReVNnku38PAG-I1SOdI4BZ2c4O-Hg/view?usp=sharing",
     4: "https://drive.google.com/file/d/1pLOOG0uBgGBknUe08kGJylS0O0tYSodu/view?usp=sharing",
     5: "https://drive.google.com/file/d/1y4msW--OqNWawoNdYyIu9Mac7N709rCx/view?usp=sharing",
-    6: ""
+    6: "https://drive.google.com/file/d/177lM6H-pUdWxOuYIXyylabFVSxWaRhI3/view?usp=sharing"
 };
 
 let currentCaseFile = null;
