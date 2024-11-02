@@ -12,23 +12,20 @@ let currentCaseFile = null;
 // Function to show dialog
 function promptRedirect(fileNumber) {
     currentCaseFile = fileNumber;
-    const dialogBox = document.getElementById("dialog-box");
-    dialogBox.classList.add("visible"); // Use a CSS class to show the dialog
+    document.getElementById("dialog-box").style.display = "flex";
 }
 
 // Function to redirect to the selected link
 function redirectToLink() {
     if (currentCaseFile && caseFileLinks[currentCaseFile]) {
         window.open(caseFileLinks[currentCaseFile], '_blank');
-    } else {
-        alert("Please select a valid case file."); // Error handling for invalid selection
     }
     closeDialog();
 }
 
+
 // Function to close dialog
 function closeDialog() {
-    const dialogBox = document.getElementById("dialog-box");
-    dialogBox.classList.remove("visible"); // Use a CSS class to hide the dialog
+    document.getElementById("dialog-box").style.display = "none";
     currentCaseFile = null;
 }
