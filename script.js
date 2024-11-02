@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         setTimeout(() => {
             ghostJumpscare.style.display = 'block';
-            ghost Jumpscare.style.animation = 'ghost-zoom 0.7s forwards';
+            ghostJumpscare.style.animation = 'ghost-zoom 0.7s forwards';
         }, 300); // Delay for 300 milliseconds
 
         ghostScreech.play();
