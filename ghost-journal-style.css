@@ -63,7 +63,7 @@ body {
     margin: 4% auto; /* Centered */
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    max-width: 600px;
+    max-width: 800px;
 }
 
 .arrow {
@@ -91,6 +91,7 @@ body {
 #ghost-image {
     display: block;
     margin: 20px auto; /* Center the image */
-    max-width: 100%; /* Make sure the image is responsive */
+    max-width: 100%;
+    height: auto;
     border-radius: 10px; /* Rounded corners for the image */
 }

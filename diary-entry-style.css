@@ -1,45 +1,57 @@
-/* Page styling */
-body {
-    background-color: #f5f5dc; /* Cream background */
-    font-family: 'Chiller', cursive;
+body{
+    background-image: url('https://png.pngtree.com/background/20230614/original/pngtree-pages-of-an-old-journal-strewn-with-papers-picture-image_3523173.jpg');
+    background-attachment: fixed; /* Fixes the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-size: cover; 
+}
+h2{
     text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 150px;
+    font-family: 'Darling Magenta';
+    /* letter-spacing: 20px; */
+    padding: 0%;
+    margin: auto;
 }
 
-h2 {
-    color: #8B0000; /* Deep blood red */
-    font-size: 4em;
-    margin-top: 20px;
+.title3 {
+    font-family: 'Darling Magenta', sans-serif;
+    font-size: 6em;
+    color: #ffffff;
+    text-align: center;
+        margin: 0 auto;
+    margin-top: 6%;
 }
 
-/* Container to center everything */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 30px;
-}
 
-/* Diary Entry Button */
-.diary-entry {
-    background-color: #000;
-    color: #f7f7f7;
-    font-size: 1.8em;
+
+.horror-button {
+    background-color: rgb(121, 156, 68);
+    color: rgb(248, 248, 248);
+    font-family: 'Darling Magenta', sans-serif;
+    font-size: 2em;
     padding: 20px 30px;
     border: 2px solid #f7f7f7;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
     margin: 10px;
-    display: inline-flex;
+    display: flex;
+    text-align: center;
     justify-content: center;
-    width: 600px;
-    
+    width: 400px;
+    margin: auto;
+    margin-bottom: 25px;
+    border-radius: 30px;
+}
+#case-file-6
+{
+    margin-bottom: 45px;
 }
 
-.diary-entry:hover {
-    background-color: #8B0000;
-    transform: scale(1.05);
-    
+.horror-button:hover {
+    background-color: #ffffff; /* Dark blood red */
+    transform: scale(1.1);
+    color: #f50581;
 }
 
 /* Dialog box styles */
@@ -52,7 +64,7 @@ h2 {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.9);
     color: #f7f7f7;
-    font-family: 'Chiller', cursive;
+    font-family: 'Darling Magenta', sans-serif;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -63,6 +75,7 @@ h2 {
     padding: 40px;
     background: #111;
     border-radius: 8px;
+  
 }
 
 .dialog-box-content h2 {
@@ -75,20 +88,24 @@ h2 {
     margin-top: 20px;
     padding: 15px 30px;
 }
-
-.confirmation-button {
-    background-color: #000000;
+.confirmation-button{
+    background-color:#000000; 
     color: #f7f7f7;
-    font-family: 'Chiller', cursive;
+    font-family: 'Darling Magenta', sans-serif;
     font-size: 2em;
     padding: 15px 30px;
     border: 2px solid #f7f7f7;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
-    margin: 5px;
 }
 
-.confirmation-button:hover {
-    background-color: #8B0000;
-    transform: scale(1.1);
+.confirmation-button:hover
+{
+    background-color: #FF0000; 
+    transform: scale(1.1); 
+}
+
+.random-text
+{
+    font-size: 2em;
 }
