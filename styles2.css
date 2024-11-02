@@ -9,25 +9,60 @@ background-color: #000000;
     margin-top: 4%;
     margin-left: -0.8%
 }
-.cover-letter{
-    color: #f7f7f7;
-    /* text-align: center; */
-    font-size: 1.5em;
-    border: #ffffff, solid;
-    /* width: 500px; */
-    /* height: auto; */
-    background-color: #000000;
-    padding-left: 20px;
+.vintage-letter {
+    background-color: #f5f5dc; /* Light beige background for a vintage feel */
+    color: #4b3c2b; /* Dark brown text color for readability */
+    font-family: 'Courier New'; /* Classic serif font */
+    font-size: 1.5em; /* Slightly larger font size */
+    line-height: 1.8; /* Increased line spacing for readability */
+    padding: 40px; /* Padding around the text */
+    border: 1px solid #4b3c2b; /* Dark brown border */
+    border-radius: 5px; /* Slightly rounded corners */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    text-align: left; /* Align text to the left */
+    margin: 20px auto; /* Center the letter with margin */
+    width: 75%; /* Set width to 75% of the container */
+    max-width: 100%; /* Limit the width for better readability */
+    position: relative; /* For pseudo-elements */
+    font-weight: 550;
 }
+
+.vintage-letter::before {
+    content: "TO: SERGEANT"; /* Header for the letter */
+    font-size: 2em; /* Larger font for the header */
+    color: #8b4513; /* Saddle brown color for the header */
+    text-decoration: underline; /* Underline for emphasis */
+    display: block; /* Make it a block element */
+    margin-bottom: 20px; /* Space below the header */
+}
+
+.vintage-letter::after {
+    content: "Yours sincerely,\A Chief Haru"; /* Footer for the letter */
+    white-space: pre;
+    font-size: 1.2em; /* Smaller font for the footer */
+    color: #8b4513; /* Saddle brown color for the footer */
+    display: block; /* Make it a block element */
+    margin-top: 20px; /* Space above the footer */
+    text-align: right; /* Align footer to the right */
+}
+
+.vintage-letter .signature {
+    font-style: italic; /* Italic style for signature */
+    margin-top: 10px; /* Space above the signature */
+}
+.id-card{
+    width: 150%; /* Make the ID card image responsive */
+    max-width: 500px;
+    margin: 20px auto; /* Center the ID card image with margin */
+    display: block; /* Ensure it's a block element */
+    border-radius: 10px; /* Optional: Add rounded corners */
+}
+
 .detect-note{
     color: #ff0000;
 }
 .name{
     color: green
-}
-.align-left{
-    text-align: left;
-    color: #ffbd4a;
 }
 .report-option {
     font-family: 'Chiller', cursive;
@@ -51,44 +86,6 @@ background-color: #000000;
     font-family: 'Chiller', cursive;
     font-size: 2em;
     
-}
-
-.code-canvas {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
-    font-family: 'ArcadeClassic', sans-serif; /* Arcade font */
-    color: #f8f8f2; /* Off-white color */
-}
-
-.terminal-header {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 600px;
-    height: 20px;
-    margin-bottom: 10px;
-}
-
-.circle {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.red {
-    background-color: #ff5c5c;
-}
-
-.yellow {
-    background-color: #ffbd4a;
-}
-
-.green {
-    background-color: #4caf50;
 }
 
 .terminal {
@@ -120,18 +117,4 @@ background-color: #000000;
     font-size: 20px;
     text-align: center;
     margin-top: 20px;
-}
-
-.id-card {
-    background-color: #111;
-    border: 2px solid #f8f8f2; /* Off-white border */
-    padding: 20px;
-    width: 300px;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.id-card img {
-    width: 100%;
-    border-radius: 10px;
 }
