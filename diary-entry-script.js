@@ -4,7 +4,7 @@ const DiaryEntryLinks = {
     3: "https://drive.google.com/file/d/19gF-TNxsundyNumWQ88CC28ZmYywInJp/view?usp=sharing",
     4: "https://drive.google.com/file/d/1x4pksXn5F88E1RgznBRfq5rSWx4Zjt7t/view?usp=sharing",
     5: "https://drive.google.com/file/d/1ZK6W8Z8Phm7Twom3ZZxjlyTbADtp54gV/view?usp=sharing",
-    6: "",
+    6: "https://drive.google.com/file/d/1lj_j9ADKeD73lcf4m7XdhXN3SEstdm60/view?usp=sharing",
 };
 
 let currentDiaryEntry = null;
