@@ -9,19 +9,34 @@ const diaryLinks = {
 
 let currentDiaryEntry = null;
 
+// Function to show the dialog
 function promptRedirect(entryNumber) {
     currentDiaryEntry = entryNumber;
-    document.getElementById("dialog-box").style.display = "flex";
+    const dialogBox = document.getElementById("dialog-box");
+    dialogBox.classList.add("visible"); // Use a CSS class to show the dialog
 }
 
+// Function to redirect to the selected link
 function redirectToLink() {
     if (currentDiaryEntry && diaryLinks[currentDiaryEntry]) {
         window.location.href = diaryLinks[currentDiaryEntry];
+    } else {
+        alert("Please select a valid diary entry."); // Error handling for invalid selection
     }
     closeDialog();
 }
 
+// Function to close the dialog
 function closeDialog() {
-    document.getElementById("dialog-box").style.display = "none";
+    const dialogBox = document.getElementById("dialog-box");
+    dialogBox.classList.remove("visible"); // Use a CSS class to hide the dialog
     currentDiaryEntry = null;
 }
+
+// Example: Adding event listeners to buttons (assuming buttons exist in the HTML)
+document.querySelectorAll('.entry-button').forEach((button, index) => {
+    button.addEventListener('click', () => promptRedirect(index + 1));
+});
+
+document.getElementById('redirect-button').addEventListener('click', redirectToLink);
+document.getElementById('close-button').addEventListener('click', closeDialog);

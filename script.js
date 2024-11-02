@@ -10,14 +10,24 @@ document.addEventListener("DOMContentLoaded", function () {
     const thunderSound = document.getElementById('thunder-sound');
     const titleContainer = document.getElementById('title-container');
     const reportButton = document.getElementById('report-button');
+    const gameTitle = document.getElementById("game-title");
+    const welcomeText = document.getElementById("welcome-text");
+    const originalTitle = gameTitle.textContent; // Original title text
+    const violinSound = document.getElementById("violin-sound"); // Get the audio element
 
     let flashCount = 0;
-    
-    // Initial Volume
-    rainSound.volume = 0.5;  
-    horrorMusic.volume = 0.4;  
-    thunderSound.volume = 0.5; 
-    ghostScreech.volume = 1.0; 
+    const INITIAL_VOLUME = {
+        rain: 0.5,
+        horror: 0.4,
+        thunder: 0.5,
+        ghostScreech: 1.0,
+    };
+
+    // Set initial volumes
+    rainSound.volume = INITIAL_VOLUME.rain;  
+    horrorMusic.volume = INITIAL_VOLUME.horror;  
+    thunderSound.volume = INITIAL_VOLUME.thunder; 
+    ghostScreech.volume = INITIAL_VOLUME.ghostScreech; 
 
     function createRaindrops() {
         for (let i = 0; i < 50; i++) {
@@ -45,42 +55,32 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(simulateLightning, Math.random() * 10000 + 5000);
     }
 
-    startButton.addEventListener('click', function () {
+    function handleStartButtonClick() {
         // Remove warning and button
         warningContainer.style.display = 'none';
 
-        
-        setTimeout(function () {
-        ghostJumpscare.style.display = 'block';
-        ghostJumpscare.style.animation = 'ghost-zoom 0.7s forwards';
-    }, 300); // Delay for 300 milliseconds
+        setTimeout(() => {
+            ghostJumpscare.style.display = 'block';
+            ghost Jumpscare.style.animation = 'ghost-zoom 0.7s forwards';
+        }, 300); // Delay for 300 milliseconds
 
-        
         ghostScreech.play();
 
         // Remove ghost after jumpscare
-        setTimeout(function () {
+        setTimeout(() => {
             ghostJumpscare.style.display = 'none';
-            
-            
-            // Rain Enviroment
+
+            // Rain Environment
             rainSound.play();
             horrorMusic.play();
             createRaindrops();
             titleContainer.style.display = 'block';
 
-
             setTimeout(simulateLightning, Math.random() * 5000 + 3000);
         }, 2000); // Delay for ghost exit
+    }
 
-});
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const gameTitle = document.getElementById("game-title");
-    const welcomeText = document.getElementById("welcome-text");
-    const originalTitle = gameTitle.textContent; // Original title text
-    const violinSound = document.getElementById("violin-sound"); // Get the audio element
+    startButton.addEventListener('click', handleStartButtonClick);
 
     gameTitle.addEventListener("mouseover", function () {
         welcomeText.style.opacity = '0'; // Fade out the welcome text

@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const ghostItems = document.querySelectorAll('.ghost-item');
     const ghostModal = document.getElementById('ghost-modal');
-    const closeModal = document.getElementById('close-modal');
+    const closeModalButton = document.getElementById('close-modal');
     const ghostImage = document.getElementById('ghost-image');
     const leftArrow = document.getElementById('left-arrow');
     const rightArrow = document.getElementById('right-arrow');
@@ -17,25 +17,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to update the displayed image based on currentIndex
     function updateImage() {
-        // Set the image source based on the current index
-        ghostImage.src = `Elements/Ghost Journal/${currentIndex + 1}.png`; // Adjust according to your image naming
+        const imagePath = `Elements/Ghost Journal/${currentIndex + 1}.png`;
+        ghostImage.src = imagePath; // Set the image source
     }
 
     // Function to close the modal
-    function closeGhostModal() {
+    function closeModal() {
         ghostModal.style.display = 'none';
         ghostImage.src = ''; // Clear image when closing modal
     }
 
-    // Event listeners for ghost items
-    ghostItems.forEach((item, index) => {
-        item.addEventListener('click', () => {
+    // Event listener for ghost items using event delegation
+    document.addEventListener('click', (event) => {
+        if (event.target.classList.contains('ghost-item')) {
+            const index = Array.from(ghostItems).indexOf(event.target);
             openModal(index); // Open the modal with the index of clicked item
-        });
+        }
     });
 
     // Close modal on button click
-    closeModal.addEventListener('click', closeGhostModal);
+    closeModalButton.addEventListener('click', closeModal);
 
     // Navigation arrows
     leftArrow.addEventListener('click', () => {
@@ -51,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close modal on Escape key press
     document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape') {
-            closeGhostModal();
+            closeModal();
         }
     });
 });
